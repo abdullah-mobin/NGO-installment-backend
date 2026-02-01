@@ -19,8 +19,8 @@
 Clone the repo and install dependencies:
 
 ```bash
-git clone <repo-url>
-cd installment-manager
+git clone https://github.com/abdullah-mobin/NGO-installment-backend.git
+cd NGO-installment-backend
 npm install
 ```
 
@@ -51,12 +51,25 @@ By default the API is mounted at `/api/v1`. When running locally the server prin
 ## API Endpoints
 
 - POST `/api/v1/auth/login`
-  - Body: `{ "phone": "<phone>", "password": "<password>" }`
+  - Body: 
+  ```
+    { 
+        "phone": "<phone>", 
+        "password": "<password>" 
+    }
+  ```
   - Response: 200 on success with user data.
 
 - POST `/api/v1/auth/register`
-  - Protected by `IsAuthenticated` middleware (expects an `Authorization: Bearer <token>` header). The project includes a placeholder token validator under `utils/jwt.js` that currently always accepts a token when present.
-  - Body: `{ "name": "...", "email": "...", "phone": "...", "password": "..." }`
+  - Body: 
+  ```
+    { 
+        "name": "...", 
+        "email": "...", 
+        "phone": "...", 
+        "password": "..." 
+    }
+  ```
   - Response: 200 on success with stored users and token values.
 
 Notes:
